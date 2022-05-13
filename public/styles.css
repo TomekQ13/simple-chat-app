@@ -1,0 +1,214 @@
+:root {
+    --borderRadius: 10px;
+    --boxShadow: 0 0 0.5em rgb(0 0 0 / .3);
+}
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border: 1px rgb(121, 121, 121) solid;
+    padding: 2rem;
+    height: 50vh;
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+}
+
+.boxOuterMessages {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 500px;
+    text-align: left;
+    margin-right: 2rem;
+}
+
+.boxChatMessages {
+    display: grid;
+    row-gap: 1rem;
+    margin-bottom: 1rem;
+    overflow: auto;
+}
+
+.boxUsernames {
+    display: grid;
+    row-gap: 1rem;
+}
+
+.boxTitle {
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 0.7rem;
+}
+
+#formChatMessage {
+    display: flex;
+}
+
+#inputChatMessage {
+    width: 100%;
+}
+
+.chatMessage {
+    padding: 0.5rem;
+    border-radius: var(--borderRadius);
+}
+
+.inputText {
+    border-radius: var(--borderRadius);
+    height: 1.3rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.areaNotifications {
+    display: grid;
+    row-gap: 0.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.notification {
+    box-shadow: var(--boxShadow);
+    font-weight: bold;
+    padding: 0.8rem;
+}
+
+.notification-info {
+    background-color: rgb(188, 210, 255);
+}
+
+.notification-error {
+    background-color: rgb(255, 167, 167);
+}
+
+.show {
+    animation: fadeIn 0.4s;
+    -webkit-animation: fadeIn 0.4s;
+    -moz-animation: fadeIn 0.4s;
+    -o-animation: fadeIn 0.4s;
+    -ms-animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+.btn {
+    border: 1px solid rgb(40, 103, 229);
+    background-color: rgb(40, 103, 229);
+    color: white;
+    border-radius: var(--borderRadius);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn:hover, .btn:focus {
+    background-color: rgb(32, 79, 171);
+}
+
+.btnSendMessage {
+    max-width: 4rem;
+    width: 30%;
+    min-width: fit-content;
+    margin-left: 2%;
+}
+
+.btnSetName {
+    height: 2rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* modal */
+.modal {
+    padding: 2rem;
+    max-width: 50ch;
+    border: 0;
+    box-shadow: var(--boxShadow);
+    border-radius: var(--borderRadius);
+}
+
+.modal::backdrop {
+    background: white;
+}
+
+#formUsername {
+    display: grid;
+    row-gap: 0.8rem;
+    min-width: 300px;
+}
+
+@media (max-width: 992px) {
+    .outerContainer {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .boxOuterMessages {
+        margin-bottom: 2rem;
+        width: 100%;
+        padding: 1rem;
+        margin-right: 0;
+        height: 75vh;
+    }
+
+    .boxOuterUsernames {
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .areaNotifications {
+        width: 90%;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        margin-right: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}

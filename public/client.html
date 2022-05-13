@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" type="module"></script>
+</head>
+<body>
+    <main>
+        <h1>Chat App</h1>
+        <div class="outerContainer">
+            <div class="box boxOuterMessages">
+                <div class="boxChatMessages">
+
+                </div>
+                <template id="templateChatMessage">
+                    <div class="chatMessage">
+                    </div>
+                </template>
+                <form id="formChatMessage" autocomplete="off">
+                    <input
+                        type="text"
+                        name="chatMessage"
+                        class="inputText"
+                        id="inputChatMessage"
+                        placeholder="Type your message here..."
+                    >
+                    <button class="btn btnSendMessage">
+                        Send
+                    </button>
+                </form>
+            </div>
+            <div class="box boxOuterUsernames">
+                <div class="boxTitle">
+                    Currently in the chat
+                </div>
+                <div class="boxUsernames">
+
+                </div>
+            </div>
+        </div>
+        <div class="areaNotifications">
+        </div>
+        <dialog class="modal" id="modal">
+            <form id="formUsername" method="dialog">
+                <input
+                    class="inputText"
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Insert your username"
+                    required
+                >
+                <button class="btn btnSetName" type="submit">
+                    Submit
+                </button>
+            </form>
+        </dialog>
+    </main>
+</body>
+</html>
